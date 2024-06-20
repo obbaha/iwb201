@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "city": "دمشق",
+        "details": "غرفتين وصوفا",
+        "monthlyRent": 3000000,
+        "additionalDetails": "كسوة سوبر ديلوكس مطبخ أمريكي إطلالة مالكي",
+        "image": "images/001.jpg"
+    },
+    {
+        "id": 2,
+        "city": "حماه",
+        "details": "أربعة وصوفا ",
+        "monthlyRent": 300000,
+        "additionalDetails": "بيت عالعظم طابق ثاني",
+        "image": "images/002.jpg"
+    },
+    {
+        "id": 3,
+        "city": "حمص",
+        "details": "ثلاثة وصوفا",
+        "monthlyRent": 600000,
+        "additionalDetails": "كسوة عادية",
+        "image": "images/003.jpg"
+    }
+]

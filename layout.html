@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عقارات</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- ربط الصفحة بملف الستايلات -->
+</head>
+<body>
+    <div id="toggle-button" onclick="toggleSidebar()">☰</div>
+    <div id="sidebar">
+        <ul>
+            <br>
+            <br>
+            <a href="Properties.html">عقارات</a>
+            <a href="AboutUs.html">من نحن</a>
+            <a href="home.html">الصفحة الرئيسية</a>
+        </ul>
+    </div>
+    <header>
+        <h1>مرحباً بك</h1>
+    </header>
+    <main>
+        <table id="properties-table">
+            <thead>
+                <tr>
+                    <th>المدينة</th>
+                    <th>التفاصيل</th>
+                    <th>الإيجار الشهري</th>
+                    <th>التحكم</th>
+                </tr>
+            </thead>
+            <tbody id="properties-body"> <!-- إضافة عنصر tbody وتعيينه ب id -->
+                <!-- هنا سنضيف الصفوف بواسطة JavaScript -->
+            </tbody>
+        </table>
+    </main>
+    
+    <script src="js/myfunctions.js"></script> <!-- تضمين ملف الوظائف -->
+    <script>
+        fetch('data/properties.json') // استخدم المسار النسبي هنا
+            .then(response => response.json())
+            .then(data => {
+                const propertiesBody = document.getElementById('properties-body');
+                data.forEach(property => {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${property.city}</td>
+                        <td>${property.details}</td>
+                        <td>${property.monthly_rent}</td>
+                        <td>
+                            <button onclick="toggleDetails(${property.id})">إظهار التفاصيل</button>
+                            <button onclick="choose(${property.id})">اختيار</button>
+                            <button onclick="navigateToNextPage(${property.id})">متابعة</button>
+                        </td>
+                        <tr class="details-row" id="details-row-${property.id}" style="display: none;">
+                            <td colspan="4">${property.additional_details}</td>
+                        </tr>
+                    `;
+                    propertiesBody.appendChild(newRow);
+                });
+            })
+            .catch(error => console.error('Error fetching properties:', error));    
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000; /* لضمان عرض الهيدر فوق أي عناصر أخرى */
+}
+
+h1 {
+    font-size: 36px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+main {
+    max-width: 800px;
+    margin: 150px auto 20px; /* تعديل الهامش العلوي ليبدأ من بعد الهيدر */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#sidebar {
+    height: 100%;
+    width: 285px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    transition: left 0.3s;
+    overflow-y: auto;
+    z-index: 4000; /* لضمان عرض الهيدر فوق أي عناصر أخرى */
+
+}
+
+#sidebar.open {
+    left: 0;
+}
+
+#toggle-button {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    cursor: pointer;
+    z-index: 10000;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 15%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#toggle-button span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+}
+
+#toggle-button span:first-child {
+    margin-bottom: 5px;
+}
+
+#sidebar {
+    height: 100%;
+    width: 285px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    transition: left 0.3s;
+    overflow-y: auto;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar li {
+    margin-bottom: 10px;
+}
+
+#sidebar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+#sidebar a:hover {
+    background-color: #555;
+}
+
+#del {
+    color: red;
+}
+
+#productImage {
+    max-width: 100%;
+    height: auto;
+}
+
+/* إضافة حدود للجدول */
+#properties-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#properties-table th,
+#properties-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#properties-table th {
+    background-color: #f2f2f2;
+}
+
+#properties-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* تحديد حجم الصور داخل الجدول */
+#properties-table img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+#follow-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#follow-button:hover {
+    background-color: #0056b3;
+}
+
+canvas {
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+/* تنسيق النموذج */
+#request-form-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* تنسيق حقول الإدخال */
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* تنسيق زر الإرسال */
+button[type="button"],
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="button"]:hover,
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* تنسيق رسالة النتيجة */
+#result-message {
+    margin-top: 10px;
+    font-weight: bold;
+}

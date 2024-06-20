@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختر عقاراً</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- ربط الصفحة بملف الستايلات -->
+    <script src="js/myfunctions.js"></script>
+</head>
+<body>
+    <div id="toggle-button" onclick="toggleSidebar()">☰</div>
+    <div id="sidebar">
+        <ul>
+            <br>
+            <br>
+            <a href="home.html">الصفحة الرئيسية</a>
+            <a href="AboutUs.html">من نحن</a>
+            <a href="Properties.html">عقارات</a>
+
+        </ul>
+    </div>
+    <header>
+        <h1>اختر عقاراً</h1>
+    </header>
+    <main>
+        <table id="properties-table">
+            <!-- هنا يتم إضافة البيانات من JavaScript -->
+            <tr>
+                <th>اختيار</th>
+                <th>تفاصيل إضافية</th>
+                <th>سعر الأجار لشهر</th>
+                <th>التفاصيل</th>
+                <th>المدينة</th>
+
+        </table>
+
+        <!-- زر "متابعة" -->
+        <button id="follow-button" onclick="showRequestForm()">متابعة</button>
+
+<!-- النموذج -->
+<div id="request-form" style="display: none;">
+    <form id="request-form-fields" onsubmit="submitRequest()">
+        <div class="form-row">
+            <label for="fullname">الاسم الكامل:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="الاسم الكامل بالعربية">
+        </div>
+
+        <div class="form-row">
+            <label for="national-id">الرقم الوطني:</label>
+            <input type="text" id="national-id" name="national-id" pattern="[0-9]{11}" placeholder="XXXXXXXXXXX" required>
+        </div>
+        
+
+        <div class="form-row">
+            <label for="birthdate">تاريخ الولادة:</label>
+            <input type="date" id="birthdate" name="birthdate">
+        </div>
+
+        <div class="form-row">
+            <label for="mobile">رقم الموبايل:</label>
+            <input type="tel" id="mobile" name="mobile" pattern="09[0-9]{8}" placeholder="09XXXXXXXXX">
+        </div>
+
+        <div class="form-row">
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" placeholder="example@example.com">
+        </div>
+
+        <button type="button" onclick="submitRequest(event)">ارسال</button>
+    </form>
+    <div id="result-message"></div>
+</div>
+    
+    
+    </main>
+</body>
+</html>
